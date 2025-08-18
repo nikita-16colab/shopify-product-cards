@@ -7,4 +7,4 @@ Optimized for Sales: Clear pricing and a call-to-action button to encourage purc
 Easy to Use: The code is well-commented and easy to adapt to any product.
 Live Demo
 https://pages.github.com/
-Made with ❤️ by nikita-16colab
+Made with ❤️ by nikita-16colab 
