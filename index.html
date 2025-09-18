@@ -1,72 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Shopify</title>
-    <!-- Подключение Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AI Video Expert | Портфолио</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #4CAF50;
+            --card-bg: #1e1e1e;
+            --card-border: #333;
         }
-        /* Анимация при наведении на изображение */
-        .card-image-container:hover .card-image {
-            transform: scale(1.05);
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #999;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-color);
+            display: block;
+            margin: 0.5rem auto 0;
+        }
+
+        .services-grid, .cases-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .service-card, .case-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .service-card p {
+            margin: 0.5rem 0;
+        }
+
+        .service-card .target {
+            font-style: italic;
+            color: #ccc;
+        }
+        
+        .service-card .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-top: 1rem;
+        }
+
+        .case-card {
+            text-align: center;
+        }
+
+        .case-card iframe {
+            width: 100%;
+            height: 400px; /* Adjusted height for shorts */
+            border-radius: 8px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            margin-top: auto;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body>
 
-    <!-- Основной контейнер карточки. Максимальная ширина 320px для стандартного Shopify-сайта. -->
-    <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-xl transform transition-transform duration-300 hover:scale-105">
-        
-        <!-- Контейнер для изображения с эффектом приближения при наведении -->
-        <div class="relative w-full aspect-square overflow-hidden card-image-container">
-            <!--
-                Изображение товара.
-                Используйте изображение 1024x1024 или 2048x2048 пикселей.
-                Атрибут `alt` важен для SEO.
-            -->
-            <img class="w-full h-full object-cover transition-transform duration-300 card-image" 
-                 src="img/Untitled.png" 
-                 alt="Изображение товара (1024x1024)">
-            
-            <!-- Лейбл "Новинка" -->
-            <div class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-                NEW
-            </div>
-        </div>
+    <div class="container">
+        <header>
+            <h1>AI Video Expert</h1>
+            <p>Создаю уникальные видео с помощью искусственного интеллекта</p>
+        </header>
 
-        <!-- Контейнер для текста и деталей -->
-        <div class="p-6 text-center">
-            <!-- Название товара -->
-            <h3 class="font-bold text-xl text-gray-800 mb-2 truncate">
-                Perfume for men
-            </h3>
-            
-            <!-- Описание товара. Текст будет ограничен двумя строками. -->
-            <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-            SEXY MAN PARFUM is the choice of a real man. A strong and masculine fragrance, ideal for dynamic life and special moments. Feel the freshness and strength in every drop.
-            </p>
-            
-            <!-- Цена и кнопка -->
-            <div class="flex items-center justify-between mt-4">
-                <!-- Цена -->
-                <span class="font-bold text-2xl text-gray-900">
-                    5.78$
-                </span>
-                
-                <!-- Кнопка "Добавить в корзину" -->
-                <button class="bg-green-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
-                    Buy
-                </button>
+        <section id="services">
+            <h2>УСЛУГИ</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>1. AI-видео с аватаром по фото</h3>
+                    <p>Фото + текст от клиента → говорящий аватар</p>
+                    <p class="target">Кому: блогеры, маркетологи, TikTok, Insta</p>
+                    <p class="price">Цена: €15–25</p>
+                </div>
+                <div class="service-card">
+                    <h3>2. AI-видео с озвучкой и сценарием</h3>
+                    <p>Сам пишу короткий сценарий + делаю видео</p>
+                    <p class="target">Кому: бизнесы, коучи, тренеры</p>
+                    <p class="price">Цена: €25–40</p>
+                </div>
+                <div class="service-card">
+                    <h3>3. Реклама/промо с аватаром</h3>
+                    <p>Аватар рекламирует товар/услугу клиента</p>
+                    <p class="target">Кому: малый бизнес, локальные магазины</p>
+                    <p class="price">Цена: €30–50</p>
+                </div>
+                <div class="service-card">
+                    <h3>4. Персональный аватар для YouTube или сайта</h3>
+                    <p>Постоянный аватар, который говорит от имени клиента</p>
+                    <p class="target">Кому: блогеры, коучи, преподаватели</p>
+                    <p class="price">Цена: €50+</p>
+                </div>
+                <div class="service-card">
+                    <h3>5. AI-видео для презентаций</h3>
+                    <p>Объяснение продукта/процесса/сервиса</p>
+                    <p class="target">Кому: стартапы, фрилансеры, студенты</p>
+                    <p class="price">Цена: €25–60</p>
+                </div>
             </div>
-        </div>
-        
+        </section>
+
+        <section id="cases">
+            <h2>ПРИМЕРЫ РАБОТ</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <h3>Кейс 1</h3>
+                    <iframe src="https://www.youtube.com/embed/vLyvhP2E_5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="case-card">
+                    <h3>Кейс 2</h3>
+                    <iframe src="https://www.youtube.com/embed/lr7Qttn-9Dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="case-card">
+                    <h3>Кейс 3</h3>
+                    <iframe src="https://www.youtube.com/embed/TZ4QO46PQ7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="case-card">
+                    <h3>Кейс 4</h3>
+                    <iframe src="https://www.youtube.com/embed/iEyO3fBmJfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <p>Хотите приобрести одну из услуг?</p>
+        <p>Свяжитесь со мной, чтобы обсудить ваш проект!</p>
+        <a href="https://wa.me/+420723673158" class="whatsapp-btn">Связаться в WhatsApp</a>
+        <p style="font-size:0.8rem; margin-top:1rem; color:#888;">© 2024 AI Video Expert. Все права защищены.</p>
+    </footer>
 
 </body>
 </html>
