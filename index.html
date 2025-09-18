@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Expert | Портфолио</title>
+    <title>AI Video Avatars by Nikita | Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
             --bg-color: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #4CAF50;
+            --accent-color: #00bfff;
             --card-bg: #1e1e1e;
             --card-border: #333;
         }
@@ -28,28 +28,63 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
 
         header {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 4rem 1rem 2rem;
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--card-border);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--accent-color);
             margin: 0;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* New Avatar Section */
+        .avatar-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .avatar-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar-section h2 {
+            font-size: 2rem;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .avatar-section p {
+            font-size: 1rem;
             color: #999;
+            margin-top: 0.5rem;
         }
 
         section {
@@ -57,105 +92,138 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 600;
             text-align: center;
             margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background-color: var(--accent-color);
-            display: block;
-            margin: 0.5rem auto 0;
+            color: var(--accent-color);
         }
 
-        .services-grid, .cases-grid {
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .services-list li {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--card-border);
+        }
+
+        .services-list li h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        .services-list li p {
+            font-size: 1rem;
+            color: #999;
+            margin: 0.5rem 0;
+        }
+
+        .services-list li .price {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+
+        .cases-grid {
             display: grid;
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        .service-card, .case-card {
+        .case-card {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1rem;
             border: 1px solid var(--card-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-
-        .service-card p {
-            margin: 0.5rem 0;
-        }
-
-        .service-card .target {
-            font-style: italic;
-            color: #ccc;
-        }
-        
-        .service-card .price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-top: 1rem;
-        }
-
-        .case-card {
             text-align: center;
+        }
+
+        .case-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .case-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 1rem;
         }
 
         .case-card iframe {
             width: 100%;
-            height: 400px; /* Adjusted height for shorts */
+            height: 400px;
             border-radius: 8px;
             border: none;
         }
 
-        footer {
+        #cta {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
             text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--card-border);
-            margin-top: auto;
+            padding: 3rem 1rem;
+            border-radius: 12px;
+            margin: 2rem auto;
         }
 
-        .whatsapp-btn {
+        #cta h2 {
+            color: var(--bg-color);
+            margin-bottom: 0.5rem;
+        }
+
+        #cta p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .contact-links a {
             display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 1rem 2rem;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
+        .contact-links a:hover {
+            background-color: #333;
+            transform: scale(1.05);
         }
         
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
-            h2 {
+            #cta h2 {
                 font-size: 1.7rem;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -164,74 +232,79 @@
 
     <div class="container">
         <header>
-            <h1>AI Video Expert</h1>
-            <p>Создаю уникальные видео с помощью искусственного интеллекта</p>
+            <h1>AI Video Avatars by Nikita</h1>
+            <p>I create talking AI avatars for your brand, content, or business. Ready to stand out? Let's talk.</p>
         </header>
 
+        <div class="avatar-section">
+            <img src="img/your-photo-here.jpg" alt="Nikita's Profile Photo">
+            <h2>Hi, I'm Nikita, a Gen Z AI Video Expert.</h2>
+            <p>I help businesses and creators boost their brand with unique, AI-powered videos.</p>
+        </div>
+
         <section id="services">
-            <h2>УСЛУГИ</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>1. AI-видео с аватаром по фото</h3>
-                    <p>Фото + текст от клиента → говорящий аватар</p>
-                    <p class="target">Кому: блогеры, маркетологи, TikTok, Insta</p>
-                    <p class="price">Цена: €15–25</p>
-                </div>
-                <div class="service-card">
-                    <h3>2. AI-видео с озвучкой и сценарием</h3>
-                    <p>Сам пишу короткий сценарий + делаю видео</p>
-                    <p class="target">Кому: бизнесы, коучи, тренеры</p>
-                    <p class="price">Цена: €25–40</p>
-                </div>
-                <div class="service-card">
-                    <h3>3. Реклама/промо с аватаром</h3>
-                    <p>Аватар рекламирует товар/услугу клиента</p>
-                    <p class="target">Кому: малый бизнес, локальные магазины</p>
-                    <p class="price">Цена: €30–50</p>
-                </div>
-                <div class="service-card">
-                    <h3>4. Персональный аватар для YouTube или сайта</h3>
-                    <p>Постоянный аватар, который говорит от имени клиента</p>
-                    <p class="target">Кому: блогеры, коучи, преподаватели</p>
-                    <p class="price">Цена: €50+</p>
-                </div>
-                <div class="service-card">
-                    <h3>5. AI-видео для презентаций</h3>
-                    <p>Объяснение продукта/процесса/сервиса</p>
-                    <p class="target">Кому: стартапы, фрилансеры, студенты</p>
-                    <p class="price">Цена: €25–60</p>
-                </div>
-            </div>
+            <h2>What I Offer</h2>
+            <ul class="services-list">
+                <li>
+                    <h3>AI Avatar from Your Photo</h3>
+                    <p>Send me your photo and script, and I'll create a professional talking avatar. Perfect for bloggers, marketers, and social media.</p>
+                    <p class="price">Price: €15–25</p>
+                </li>
+                <li>
+                    <h3>AI Video with Custom Script</h3>
+                    <p>Need engaging content but don't have a script? I'll write it for you and produce a high-quality AI video. Ideal for businesses, coaches, and trainers.</p>
+                    <p class="price">Price: €25–40</p>
+                </li>
+                <li>
+                    <h3>AI Promo & Ads</h3>
+                    <p>Let an AI avatar promote your product or service with a compelling video. Great for small businesses and local shops looking for quick, effective marketing.</p>
+                    <p class="price">Price: €30–50</p>
+                </li>
+                <li>
+                    <h3>Personal AI Avatar for YouTube or Website</h3>
+                    <p>Get a consistent AI avatar that represents you and your brand. The ultimate solution for long-term content creators, educators, and coaches.</p>
+                    <p class="price">Price: €50+</p>
+                </li>
+            </ul>
         </section>
 
         <section id="cases">
-            <h2>ПРИМЕРЫ РАБОТ</h2>
+            <h2>My Work</h2>
             <div class="cases-grid">
                 <div class="case-card">
-                    <h3>Кейс 1</h3>
+                    <h3>Brand Storytelling</h3>
+                    <p>A short, impactful video to explain your brand's mission and values.</p>
                     <iframe src="https://www.youtube.com/embed/vLyvhP2E_5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="case-card">
-                    <h3>Кейс 2</h3>
+                    <h3>Social Media Promo</h3>
+                    <p>An engaging video ad to grab attention on platforms like Instagram and TikTok.</p>
                     <iframe src="https://www.youtube.com/embed/lr7Qttn-9Dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="case-card">
-                    <h3>Кейс 3</h3>
+                    <h3>Product Explanation</h3>
+                    <p>A simple yet effective video to showcase what your product or service does.</p>
                     <iframe src="https://www.youtube.com/embed/TZ4QO46PQ7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="case-card">
-                    <h3>Кейс 4</h3>
+                    <h3>Educational Content</h3>
+                    <p>A dynamic avatar video perfect for explainer content or online courses.</p>
                     <iframe src="https://www.youtube.com/embed/iEyO3fBmJfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
+            </div>
+        </section>
+        
+        <section id="cta">
+            <h2>Ready to Create Your AI Avatar?</h2>
+            <p>Get your first video for only **€15** (limited time offer).</p>
+            <div class="contact-links">
+                <a href="https://wa.me/+420723 673 158">Message on WhatsApp</a>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>Хотите приобрести одну из услуг?</p>
-        <p>Свяжитесь со мной, чтобы обсудить ваш проект!</p>
-        <a href="https://wa.me/+420723673158" class="whatsapp-btn">Связаться в WhatsApp</a>
-        <p style="font-size:0.8rem; margin-top:1rem; color:#888;">© 2024 AI Video Expert. Все права защищены.</p>
+        <p>AI Video Expert. All rights reserved.</p>
     </footer>
 
 </body>
